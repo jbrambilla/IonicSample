@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core';
 
+let key_name = "showslide";
 @Injectable()
 export class ConfigProvider {
-
-  private config = {
-    showSlide: false,
-    name: "",
-    username: ""
-  }
   constructor() {
 
   }
 
   getConfigData(): any{
-
+    return localStorage.getItem(key_name);
   }
 
   setConfigData(): any{
-    
+    localStorage.setItem(key_name, "true");
+
   }
 }
